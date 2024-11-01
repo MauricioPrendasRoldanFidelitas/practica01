@@ -1,0 +1,23 @@
+<th:block th:fragment="contenido">
+    <h2 class="text-center my-4">Lista de Árboles</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre Común</th>
+                <th>Tipo de Flor</th>
+                <th>Dureza de Madera</th>
+                <th>Altura Promedio</th>
+                <th>Imagen</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="arbol : ${arboles}">
+                <td th:text="${arbol.nombreComun}"></td>
+                <td th:text="${arbol.tipoFlor}"></td>
+                <td th:text="${arbol.durezaMadera}"></td>
+                <td th:text="${arbol.alturaPromedio}"></td>
+                <td><img th:src="${arbol.imagenRuta}" alt="Imagen del Árbol" width="100"></td>
+            </tr>
+        </tbody>
+    </table>
+</th:block>
